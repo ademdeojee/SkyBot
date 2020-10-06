@@ -9,7 +9,7 @@ client.on('ready', () => {
 });
 
 client.on('typingStart', (channel, user) => {
-    if (user.tag === '362539219517964288') channel.send("you finna cap");
+    if (user.id === '362539219517964288') channel.send("you finna cap");
 })
 
 client.on('message', message => {
