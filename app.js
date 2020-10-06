@@ -1,8 +1,6 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const token = "NzM0MjM3MTg4MjgzMTcwODQ5.XxOxqw.xxG9AiQ3rsB2dksCQ3VyyQBKquQ"
-const PREFIX = "~"
-
+const config = require("./config.json");
 const ytdl = require("ytdl-core");
 var servers = {};
 
@@ -16,32 +14,26 @@ client.on('typingStart', (channel, user) => {
 
 client.on('message', message => {
     if (message.author.bot) return;
-    if (message.content === 'ping') {
-        console.log(message.member.user.id);
-        message.channel.send('pong');
+    switch (message.content) {
+        case 'ping':
+            console.log(message.member.user.id);
+            message.channel.send('pong');
+            break;
+
+        case 'when?': message.channel.send('when did i ask?'); break;
+        case 'who?': message.channel.send('who asked?'); break;
+        case 'why?': message.channel.send('why should i care?'); break;
+        case 'how?': message.channel.send('how many fucks do i give?'); break;
+        case 'what?': message.channel.send('whatever'); break;
     }
-    if (message.content === 'when?') {
-        message.channel.send('when did i ask?');
-    }
-    if (message.content === 'who?') {
-        message.channel.send('who asked?');
-    }
-    if (message.content === 'why?') {
-        message.channel.send('why should i care?');
-    }
-    if (message.content === 'how?') {
-        message.channel.send('how many fucks do i give?');
-    }
-    if (message.content === 'what?') {
-        message.channel.send('whatever');
-    }
-    else if (message.member.user.id === '362539219517964288') {
+
+    if (message.member.user.id === '362539219517964288') {
         message.channel.send("that's cap");
         message.react('🧢');
     }
-    else if (!message.content.startsWith(PREFIX)) return;
+    else if (!message.content.startsWith(config.prefix)) return;
 
-    let args = message.content.substring(PREFIX.length).split(" ");
+    let args = message.content.substring(config.prefix.length).split(" ");
 
     switch (args[0]) {
         case 'play':
@@ -103,9 +95,5 @@ client.on('message', message => {
     }
 
 });
-
-
-
-
 
 client.login(token);
