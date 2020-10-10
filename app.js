@@ -25,7 +25,7 @@ client.on('message', message => {
         case 'what?': message.channel.send('whatever'); break;
     }
 
-    if (message.member.user.id === '362539219517964288' || message.member.user.tag == "Swaghetti Yolonese#4059" && capmode) {
+    if (message.member.user.id === '362539219517964288' || message.member.user.id == "407809062156369920" && capmode) {
         message.reply("that's cap");
         message.react('🧢');
     }
@@ -34,9 +34,9 @@ client.on('message', message => {
     let args = message.content.substring(config.prefix.length).split(" ");
 
     switch (args[0]) {
-
     }
 
 });
+
 
 client.login(config.token);
