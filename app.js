@@ -35,6 +35,7 @@ client.on('message', message => {
     let args = message.content.substring(config.prefix.length).split(" ");
 
     switch (args[0]) {
+        case 'capmode': capmode = !capmode; message.channel.send('capmode = ' + capmode); break;
     }
 
 });
