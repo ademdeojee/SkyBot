@@ -10,7 +10,7 @@ client.on('ready', () => {
 client.on('message', message => {
     if (message.author.bot) return;
     let input = message.content.toLowerCase();
-    switch (message.content) {
+    switch (input) {
         case 'ping':
             console.log(message.member.user.id);
             message.channel.send('pong');
