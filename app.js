@@ -15,7 +15,7 @@ client.on('message', message => {
             message.channel.send('pong');
             break;
         case 'he is capping again':
-            message.channel.send('capmode activated');
+            message.channel.send('ayrib jey');
             capmode = true;
             break;
         case 'when?': message.channel.send('when did i ask?'); break;
@@ -25,7 +25,7 @@ client.on('message', message => {
         case 'what?': message.channel.send('whatever'); break;
     }
 
-    if (message.member.user.id === '362539219517964288' || message.member.user.id == "407809062156369920" && capmode) {
+    if (message.member.user.id === '362539219517964288' && capmode) {
         message.reply("that's cap");
         message.react('🧢');
     }
