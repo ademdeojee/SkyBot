@@ -23,7 +23,7 @@ client.on('message', message => {
         case 'who': case 'who?': message.channel.send('who asked?'); break;
         case 'why': case 'why?': message.channel.send('why should i care?'); break;
         case 'how': case 'how?': message.channel.send('how many fucks do i give?'); break;
-        case 'what': case 'what?': message.channel.send('whatever'); break;
+        case 'what': case 'what?': message.channel.send('ever'); break;
     }
 
     if (message.member.user.id === '362539219517964288' && capmode) {
